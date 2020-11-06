@@ -1,3 +1,11 @@
+## Example
+1) Save (rectified) image from bag file, need to check camera info parameter defined in cfg/tum_rs_vio.yaml
+```bash
+roslaunch image_undistort tum_rs_vio.launch
+rosrun image_undistort save_output_image.py /path/to/save/
+rosbag play dataset-seq4.bag
+```
+## BELOW IS THE ORIGINAL REPO
 image_undistort exists to handle all the odd situations image_proc doesn't quite cover. Some examples of this are
 * working with images that don't have a camera_info topic
 * undistortion of images using equidistant or other less common camera models
