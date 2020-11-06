@@ -1,11 +1,11 @@
 <launch>
 
-<arg name="input_camera_name" default="tello" />
-<arg name="scale" default="1.0" />
-<arg name="calib_path" default="$(find image_undistort)/cfg/tello_ros.yaml"/>
+<arg name="input_camera_name" default="cam0" />
+<arg name="scale" default="0.5" />
+<arg name="calib_path" default="$(find image_undistort)/cfg/tum_rs_vio.yaml"/>
 
   <node name="image_undistort_node" pkg="image_undistort" type="image_undistort_node">
-    <param name="input_camera_namespace" value="tello"/>      
+    <param name="input_camera_namespace" value="cam0"/>      
     <param name="input_camera_info_from_ros_params" value = "true"/>    
     <param name="scale" value="$(arg scale)"/>
     <param name="output_camera_info_source" value="auto_generated"/>
