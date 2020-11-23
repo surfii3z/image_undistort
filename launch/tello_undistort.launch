@@ -2,15 +2,17 @@
 
 <arg name="input_camera_name" default="tello" />
 <arg name="scale" default="1.0" />
-<!-- <arg name="calib_path" default="$(find image_undistort)/cfg/960x720.yaml"/> -->
+<arg name="calib_path" default="$(find image_undistort)/cfg/tello_ros.yaml"/>
 
   <node name="image_undistort_node" pkg="image_undistort" type="image_undistort_node">
     <param name="input_camera_namespace" value="tello"/>      
-    <param name="input_camera_info_from_ros_params" value = "false"/>    
+    <param name="input_camera_info_from_ros_params" value = "true"/>    
     <param name="scale" value="$(arg scale)"/>
     <param name="output_camera_info_source" value="auto_generated"/>
-    <!-- <rosparam file="$(arg calib_path)"/> -->
+    <rosparam file="$(arg calib_path)"/>
     <remap from="input/image" to="$(arg input_camera_name)/image_raw"/>
+
+    <remap from="output/image" to="/camera/color/image_raw"/>
   </node>
 
 </launch>
