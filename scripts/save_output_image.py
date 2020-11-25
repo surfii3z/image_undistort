@@ -20,6 +20,7 @@ class imageSaver:
         rospy.init_node('output_sub_node')
         self.bridge = CvBridge()
         self.count = 0
+        self.image_count = 0
         self.args = args
 
         rospy.Subscriber('/output/image', Image, self.cb_image)
@@ -27,11 +28,16 @@ class imageSaver:
     
     def cb_image(self, data):
 
-        cv_img = self.bridge.imgmsg_to_cv2(data, desired_encoding="passthrough")
-        path = os.path.join(self.args.output_dir, "%06i.png" % self.count)
-        cv2.imwrite(path, cv_img)
-        rospy.loginfo('save the image to {}'.format(path))
+        
+        if self.count % 1 == 0:
+            cv_img = self.bridge.imgmsg_to_cv2(data, desired_encoding="passthrough")
+            path = os.path.join(self.args.output_dir, "%06i.png" % self.image_count)
+            cv2.imwrite(path, cv_img)
+            rospy.loginfo('save the image to {}'.format(path))
+            self.image_count += 1
+
         self.count += 1
+        
 
 
 if __name__ == '__main__':
