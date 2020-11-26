@@ -9,10 +9,12 @@
     <param name="input_camera_info_from_ros_params" value = "true"/>    
     <param name="scale" value="$(arg scale)"/>
     <param name="output_camera_info_source" value="auto_generated"/>
+    <param name="publish_tf" value="false" />
     <rosparam file="$(arg calib_path)"/>
     <remap from="input/image" to="$(arg input_camera_name)/image_raw"/>
 
     <remap from="output/image" to="/camera/color/image_raw"/>
+    <remap from="/tf" to="/tf_image_undistorted"/>
   </node>
 
 </launch>
