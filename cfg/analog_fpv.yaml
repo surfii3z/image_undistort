@@ -1,0 +1,7 @@
+tello:
+  camera_model: pinhole
+  distortion_coeffs: [-0.2522, 0.0444, 7.3624e-4, 0.0013]
+  distortion_model: plumb_bob
+  intrinsics: [334.2664, 329.6641, 326.9965, 229.6197]
+  resolution: [640, 480]
+  rostopic: /analog_fpv_input
