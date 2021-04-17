@@ -1,0 +1,7 @@
+tello:
+  camera_model: pinhole
+  distortion_coeffs: [-0.0185463970719169, 0.0507502746085727, 0.000625023207077886, 0.000129132365405235, -0.0671609456059185]
+  distortion_model: plumb_bob
+  intrinsics: [920.653003686815, 915.991902804336, 470.966494379136, 366.042487773625]
+  resolution: [960, 720]
+  rostopic: /tello_ros_input
