@@ -1,3 +1,13 @@
+## General Information
+See the original `README.md` below
+
+## Installation
+```bash
+# assume pwd is /path/to/catkin_ws/src
+git clone -b thesis https://github.com/surfii3z/image_undistort.git
+```
+
+
 ## Example
 1) Save (rectified) image from bag file, need to check camera info parameter defined in cfg/tum_rs_vio.yaml
 ```bash
