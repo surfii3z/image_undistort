@@ -1,4 +1,4 @@
-## General Information
+## General information
 See the original `README.md` below
 
 ## Installation
